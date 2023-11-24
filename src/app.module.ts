@@ -7,6 +7,7 @@ import { DetalleVentasModule } from './detalle-ventas/detalle-ventas.module';
 import { CarritosModule } from './carritos/carritos.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
+import { AutenticacionModule } from './autenticacion/autenticacion.module';
 
 @Module({
   imports: [
@@ -21,9 +22,10 @@ import { ConfigModule } from '@nestjs/config';
       autoLoadEntities: true,
       synchronize: true,
     }),
+    AutenticacionModule,
+    UsuariosModule,
     CategoriasModule,
     ProductosModule,
-    UsuariosModule,
     VentasModule,
     DetalleVentasModule,
     CarritosModule,

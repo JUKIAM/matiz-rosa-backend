@@ -18,7 +18,7 @@ import {
 } from '@nestjs/swagger';
 import { Categoria } from './entities/categoria.entity';
 
-//@ApiBearerAuth()
+@ApiBearerAuth()
 @ApiTags('categorias')
 @Controller('categorias')
 export class CategoriasController {
