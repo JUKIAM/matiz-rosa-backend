@@ -16,9 +16,14 @@ import {
   ApiResponse,
   ApiParam,
   ApiBody,
+  ApiBearerAuth,
 } from '@nestjs/swagger';
 import { Producto } from './entities/producto.entity';
+import { Role } from 'src/autenticacion/enums/role.enum';
+import { Auth } from 'src/autenticacion/decorators/auth.decorator';
 
+@Auth(Role.Administrador)
+@ApiBearerAuth()
 @ApiTags('productos')
 @Controller('productos')
 export class ProductosController {

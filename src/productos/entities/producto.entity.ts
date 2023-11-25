@@ -1,10 +1,12 @@
 import { Categoria } from 'src/categorias/entities/categoria.entity';
+import { DetalleVenta } from 'src/detalle-ventas/entities/detalle-venta.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
   ManyToOne,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
 
 @Entity()
@@ -32,4 +34,7 @@ export class Producto {
 
   @Column({ type: 'datetime', default: () => 'CURRENT_TIMESTAMP' })
   fechaCreacion: Date;
+
+  @OneToMany(() => DetalleVenta, (detalleVenta) => detalleVenta.producto)
+  detallesVentas: DetalleVenta[];
 }

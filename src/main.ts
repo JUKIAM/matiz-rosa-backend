@@ -17,7 +17,7 @@ async function bootstrap() {
 
   const swaggerConfig = new DocumentBuilder()
     .addBearerAuth()
-    .setTitle('Travely API')
+    .setTitle('Matiz Rosa Backend')
     .setDescription('API RESTful para la gestión de viajes')
     .setVersion('1.0')
     .build();
